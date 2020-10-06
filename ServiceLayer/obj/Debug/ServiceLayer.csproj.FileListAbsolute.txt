@@ -1,0 +1,11 @@
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\bin\Debug\ServiceLayer.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\bin\Debug\ServiceLayer.pdb
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\bin\Debug\Model.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\bin\Debug\Model.pdb
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\obj\Debug\ServiceLayer.csprojAssemblyReference.cache
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\obj\Debug\ServiceLayer.csproj.CoreCompileInputs.cache
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\obj\Debug\ServiceLayer.csproj.CopyComplete
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\obj\Debug\ServiceLayer.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\ServiceLayer\obj\Debug\ServiceLayer.pdb

@@ -1,0 +1,854 @@
+﻿@model Model.AllProperties
+@{
+    ViewBag.Title = "UpdatePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+  
+}
+<html>
+<head>
+    <style>
+        p {
+            font: bold 20px tahoma;
+            color: gray;
+        }
+
+            p:hover {
+                font: bold 20px tahoma;
+                color: white;
+            }
+        i {
+            font-size: xx-large;
+            color: gray;
+            float: right;
+            margin-top: 10px;
+        }
+            i:hover {
+                font-size: xx-large;
+                color: white;
+                float: right;
+                
+            }
+
+        .btn-dark {
+            background-color: black;
+            font-size: x-large;
+            color: gray;
+            float: right
+        }
+
+            .btn-dark:hover {
+                background-color: black;
+                font-size: xx-large;
+                color: white;
+                float: right
+            }
+
+        .top-header {
+            background-color: black;
+        }
+
+        .btn-primary {
+            background-color: forestgreen;
+            float: right;
+            margin-right: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px
+        }
+        .divForm {
+            margin-top:15px; 
+            margin-bottom:15px
+        }
+    </style>
+
+
+    <script>
+        function myFunction(x) {
+            x.classList.toggle("fa-chevron-up");
+        }
+
+       
+    </script>
+
+    <script src="https://kit.fontawesome.com/4dd69257fd.js" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" language="javascript">
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <p style="font-size:10px;"></p>
+    <div class="container" style="margin-top:30px">
+
+        <!-- Name -->
+
+        <div class="container">
+            <div style="border-bottom: solid;border-width:1px;border-color:gainsboro" class="top-header row">
+                <div style="background-color:black;height:50px;padding-top:15px" class="top-header col-md-6">
+                     <p>Name</p>
+                </div>
+                <div id="dene" style="background-color:black;height:50px;" class="top-header col-md-6">
+                    <i id="nameButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            
+            <div id="nameDiv" class="row slideUpDiv">
+                <div class="divForm" >
+                    <form action="/Home/UpdateName" method="post">
+                        <input id="userId" type="hidden" name="Id" value="@Model.Id" />
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="form-group col-md-4">
+                                    <div class="form-group">
+
+                                        <label for="title">Title</label>
+                                        <input type="text" class="form-control" name="title" value="@Model.title" id="title">
+
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="form-group">
+
+                                        <label for="first">First</label>
+                                        <input type="text" class="form-control" name="first" value="@Model.first" id="first">
+
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <div class="form-group">
+
+                                        <label for="first">Last</label>
+                                        <input type="text" class="form-control" name="last" value="@Model.last" id="last">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- Street -->
+        <div class="container">
+            <div class="row">
+                <div style="background-color:black;height:50px;font: bold 20px tahoma;padding-top:15px" class="col-md-6">
+                    <p>Street</p>
+                </div>
+                <div style="background-color:black; height: 50px;" class="col-md-6">
+                    
+                    <i id="streetButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <div id="streetDiv" class="row slideUpDiv">
+                <div class="divForm">
+                    <form action="/Home/UpdateStreet" method="post">
+                        <input type="hidden" name="Id" value="@Model.Id" />
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="form-group col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="number">Number</label>
+                                        <input type="text" class="form-control" onkeypress="return isNumberKey(event)" name="number" value="@Model.number" id="number">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div class="form-group">
+
+                                        <label for="streetName">StreetName</label>
+                                        <input type="text" class="form-control" name="streetName" value="@Model.streetName" id="streetName">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+        <hr />
+        <!-- Result -->
+
+        <div class="container">
+            
+            <div class="row">
+                <div style="background-color:black;height:50px;font: bold 20px tahoma;padding-top:15px" class="col-md-6">
+                    <p>Result</p>
+                </div>
+                <div style="background-color:black;height:50px;" class="col-md-6">
+                   
+                    <i id="resultButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <div id="resultDiv" class="row slideUpDiv">
+                <div class="divForm">
+                    <form action="/Home/UpdateResult" method="post">
+                        <input type="hidden" name="Id" value="@Model.Id">
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="form-group col-md-4">
+
+
+                                    <label for="gender">Gender</label>
+                                    <input type="text" class="form-control" name="gender" value="@Model.gender" id="gender">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" name="email" value="@Model.email" id="email">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control" name="phone" value="@Model.phone" id="phone">
+
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group col-md-4">
+
+                                    <label for="cell">Cell</label>
+                                    <input type="text" class="form-control" name="cell" value="@Model.cell" id="cell">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="nat">Nat</label>
+                                    <input type="text" class="form-control" name="nat" value="@Model.nat" id="nat">
+
+                                </div>
+                            </div>
+                            <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        <hr />
+        <!-- Login -->
+        <div class="container">
+
+            <div class="row">
+                <div style="background-color:black;height:50px;font: bold 20px tahoma;padding-top:15px" class="col-md-6">
+                    <p>Login</p>
+                </div>
+                <div style="background-color:black;height:50px;" class="col-md-6">
+                   
+                    <i id="loginButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <div id="loginDiv" class="row slideUpDiv">
+                <div class="divForm">
+                    <form action="/Home/UpdateLogin" method="post">
+                        <input type="hidden" name="Id" value="@Model.Id">
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="form-group col-md-4">
+
+                                    <label for="uuid">Uuid</label>
+                                    <input type="text" class="form-control" name="uuid" value="@Model.uuid" id="uuid">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" name="username" value="@Model.username" id="username">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="password">Password</label>
+                                    <input type="text" class="form-control" name="password" value="@Model.password" id="password">
+
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group col-md-4">
+
+                                    <label for="salt">Salt</label>
+                                    <input type="text" class="form-control" name="salt" value="@Model.salt" id="salt">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="md5">Md5</label>
+                                    <input type="text" class="form-control" name="md5" value="@Model.md5" id="md5">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="sha1">Sha1</label>
+                                    <input type="text" class="form-control" name="sha1" value="@Model.sha1" id="sha1">
+
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="form-group col-md-4">
+
+                                    <label for="sha256">Sha256</label>
+                                    <input type="text" class="form-control" name="sha256" value="@Model.sha256" id="sha256">
+
+                                </div>
+                            </div>
+                            
+                            <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        <hr />
+        <!-- Coordinates -->
+        <div class="container">
+
+            <div class="row">
+                <div style="background-color:black;height:50px;font: bold 20px tahoma;padding-top:15px" class="col-md-6">
+                    <p>Coordinates</p>
+                </div>
+                <div style="background-color:black;height:50px;" class="col-md-6">
+                   
+                    <i id="coordinatesButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <div id="coordinatesDiv" class="row slideUpDiv">
+                <div class="divForm">
+                    <form action="/Home/UpdateCoordinates" method="post">
+                        <input type="hidden" name="Id" value="@Model.Id">
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="form-group col-md-6">
+
+                                    <label for="latitude">Latitude</label>
+                                    <input type="text" class="form-control" name="latitude" value="@Model.latitude" id="latitude">
+
+                                </div>
+                                <div class="form-group col-md-6">
+
+                                    <label for="longitude">Longitude</label>
+                                    <input type="text" class="form-control" name="longitude" value="@Model.longitude" id="longitude">
+
+                                </div>
+                                
+                            </div>
+                            <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        <hr />
+        <!-- Id -->
+        <div class="container">
+
+            <div class="row">
+                <div style="background-color: black; height: 50px; font: bold 20px tahoma; padding-top: 15px" class="col-md-6">
+                    <p>Id</p>
+                </div>
+                <div style="background-color:black;height:50px;" class="col-md-6">
+                   
+                    <i id="idButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <div id="idDiv" class="row slideUpDiv">
+                <div class="divForm">
+                    <form action="/Home/UpdateId" method="post">
+                        <input type="hidden" name="Id" value="@Model.Id">
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="form-group col-md-6">
+
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" name="name" value="@Model.name" id="name">
+
+                                </div>
+
+                                <div class="form-group col-md-6">
+
+                                    <label for="value">Value</label>
+                                    <input type="text" class="form-control" name="value" value="@Model.value" id="value">
+
+                                </div>
+                            </div>
+                            
+                            <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        <hr />
+        <!-- Timezone -->
+        <div class="container">
+
+            <div class="row">
+                <div style="background-color:black;height:50px;font: bold 20px tahoma;padding-top:15px" class="col-md-6">
+                    <p>Timezone</p>
+                </div>
+                <div style="background-color:black;height:50px;" class="col-md-6">
+                    
+                    <i id="timezoneButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <div id="timezoneDiv" class="row slideUpDiv">
+                <div class="divForm">
+                    <form action="/Home/UpdateTimezone" method="post">
+                        <input type="hidden" name="Id" value="@Model.Id">
+                        <div class="container">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+
+                                    <label for="offset">Offset</label>
+                                    <input type="text" class="form-control" name="offset" value="@Model.offset" id="offset">
+
+                                </div>
+                                <div class="form-group col-md-6">
+
+                                    <label for="description">Description</label>
+                                    <input type="text" class="form-control" name="description" value="@Model.description" id="description">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        <hr />
+        <!-- Picture  -->
+        <div class="container">
+
+            <div class="row">
+                <div style="background-color:black;height:50px;font: bold 20px tahoma;padding-top:15px" class="col-md-6">
+                    <p>Picture</p>
+                </div>
+                <div style="background-color:black;height:50px;" class="col-md-6">
+                    <i id="pictureButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+
+            <div id="pictureDiv" class="row slideUpDiv">
+                <div class="divForm">
+                    <form action="/Home/UpdatePicture" method="post">
+                        <input type="hidden" name="Id" value="@Model.Id" />
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="form-group col-md-4">
+                                    <label for="large">Large</label>
+                                    <input type="text" class="form-control" name="large" value="@Model.large" id="large">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="medium">Medium</label>
+                                    <input type="text" class="form-control" name="medium" value="@Model.medium" id="medium">
+
+                                </div>
+                                <div class="form-group col-md-4">
+
+                                    <label for="thumbnail">thumbnail</label>
+                                    <input type="text" class="form-control" name="thumbnail" value="@Model.thumbnail" id="thumbnail">
+
+                                </div>
+                                
+                            </div>
+                            <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        <hr>
+        <!-- Location  -->
+        <div class="container">
+
+            <div class="row">
+                <div style="background-color:black;height:50px;font: bold 20px tahoma;padding-top:15px" class="col-md-6">
+                    <p>Location</p>
+                </div>
+                <div style="background-color:black;height:50px;" class="col-md-6">
+                    <i id="locationButton" onclick="myFunction(this)" class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+
+            <div id="locationDiv" class="row slideUpDiv">
+                <div class="divForm">
+                    <form action="/Home/UpdateLocation" method="post">
+                        <input type="hidden" name="Id" value="@Model.Id">
+
+                        <div class="form-row">
+                            <div class="container">
+                                <div class="container">
+                                    <div class="form-group col-md-4">
+
+                                        <label for="city">City</label>
+                                        <input type="text" class="form-control" name="city" value="@Model.city" id="city">
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+
+                                        <label for="state">State</label>
+                                        <input type="text" class="form-control" name="state" value="@Model.state" id="state">
+
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+
+                                        <label for="country">Country</label>
+                                        <input type="text" class="form-control" name="country" value="@Model.country" id="country">
+
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div class="form-group col-md-4">
+
+                                        <label for="postcode">Postcode</label>
+                                        <input type="text" class="form-control" name="postcode" value="@Model.postcode" id="postcode">
+
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                            <div style="border-top: solid; border-width:1px; border-color:gainsboro">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        <hr />
+
+        <button id="allUpdateTable" type="submit" class="btn btn-info" style="font-size:large">All Table Update</button>
+
+    </div>
+
+        <!-- AllUpdatesTable -->
+
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                $("#allUpdateTable").on("click", function () {
+                    var model = {
+                        Id: document.getElementById('userId').value,
+                        title: document.getElementById('title').value,
+                        first: document.getElementById('first').value,
+                        last: document.getElementById('last').value,
+                        number: document.getElementById('number').value,
+                        streetName: document.getElementById('streetName').value,
+                        gender: document.getElementById('gender').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        cell: document.getElementById('cell').value,
+                        nat: document.getElementById('nat').value,
+                        uuid: document.getElementById('uuid').value,
+                        username: document.getElementById('username').value,
+                        password: document.getElementById('password').value,
+                        salt: document.getElementById('salt').value,
+                        md5: document.getElementById('md5').value,
+                        sha1: document.getElementById('sha1').value,
+                        sha256: document.getElementById('sha256').value,
+                        latitude: document.getElementById('latitude').value,
+                        longitude: document.getElementById('longitude').value,
+                        name: document.getElementById('name').value,
+                        value: document.getElementById('value').value,
+                        offset: document.getElementById('offset').value,
+                        description: document.getElementById('description').value,
+                        large: document.getElementById('large').value,
+                        medium: document.getElementById('medium').value,
+                        thumbnail: document.getElementById('thumbnail').value,
+                        city: document.getElementById('city').value,
+                        state: document.getElementById('state').value,
+                        country: document.getElementById('country').value,
+                        postcode: document.getElementById('postcode').value,
+                    }
+                    $.ajax({
+                        url: '/Home/UpdatePage',
+                        type: 'POST',
+                        data: model,
+                        success: function () {
+                            swal("Good job!", "All Table Was Update!", "success")
+                        }
+                    });
+                });
+            });
+
+        </script>
+
+
+
+        <script>
+            
+            $(document).ready(function () {
+                var num = 1;
+                $("#nameButton").click(function (){
+                    if (num == 0) {
+                        $("#nameDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#nameDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                var num = 1;
+                $("#streetButton").click(function () {
+                    if (num == 0) {
+                        $("#streetDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#streetDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                var num = 1;
+                $("#resultButton").click(function () {
+                    if (num == 0) {
+                        $("#resultDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#resultDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                var num = 1;
+                $("#loginButton").click(function () {
+                    if (num == 0) {
+                        $("#loginDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#loginDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                var num = 1;
+                $("#coordinatesButton").click(function () {
+                    if (num == 0) {
+                        $("#coordinatesDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#coordinatesDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                var num = 1;
+                $("#idButton").click(function () {
+                    if (num == 0) {
+                        $("#idDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#idDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                var num = 1;
+                $("#timezoneButton").click(function () {
+                    if (num == 0) {
+                        $("#timezoneDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#timezoneDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                var num = 1;
+                $("#pictureButton").click(function () {
+                    if (num == 0) {
+                        $("#pictureDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#pictureDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+
+
+            $(document).ready(function () {
+                var num = 1;
+                $("#locationButton").click(function () {
+                    if (num == 0) {
+                        $("#locationDiv").slideDown();
+                        num = 1;
+                    } else {
+                        $("#locationDiv").slideUp();
+                        num = 0;
+                    }
+                });
+            });
+            //$(document).ready(function () {
+            //    $("#minusName").click(function () {
+            //        $("#nameDiv").slideUp();
+            //    });
+            //    $("#plusName").click(function () {
+            //        $("#nameDiv").slideDown();
+            //    });
+            //});
+
+
+        </script>
+
+        @if (TempData["nameTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["nameTemp"]", "success");
+                }
+            </script>
+        }
+        @if (TempData["streetTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["streetTemp"]", "success");
+                }
+            </script>
+        }
+        @if (TempData["resultTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["resultTemp"]", "success");
+                }
+            </script>
+        }
+        @if (TempData["loginTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["loginTemp"]", "success");
+                }
+            </script>
+        }
+        @if (TempData["coordinatesTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["coordinatesTemp"]", "success");
+                }
+            </script>
+        }
+        @if (TempData["idTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["idTemp"]", "success");
+                }
+            </script>
+        }
+        @if (TempData["timezoneTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["timezoneTemp"]", "success");
+                }
+            </script>
+        }
+        @if (TempData["pictureTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["pictureTemp"]", "success");
+                }
+            </script>
+        }
+        @if (TempData["locationTemp"] != null)
+        {
+            <script type="text/javascript">
+                window.onload = function () {
+                    swal("Good job!", "@TempData["locationTemp"]", "success");
+                }
+            </script>
+        }
+
+
+
+</body>
+</html>
+<style>
+    .addFrame {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+        background-color: #F0F0F0;
+    }
+    .slideUpDiv {
+        background-color:#F5F5F5;
+    }
+</style>
+

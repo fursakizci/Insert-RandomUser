@@ -1,0 +1,14 @@
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\Model.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\DataLayer.dll.config
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\Model.pdb
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\furkan\Desktop\Proje1\RandomUser\BusinessLayer\obj\Debug\BusinessLayer.pdb
